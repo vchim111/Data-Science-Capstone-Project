@@ -7,7 +7,7 @@ from dash.dependencies import Input, Output
 import plotly.express as px
 
 # Read the airline data into pandas dataframe
-spacex_df = pd.read_csv("spacex_launch_dash.csv")
+spacex_df = pd.read_csv("Final DS\\spacex_launch_dash.csv")
 max_payload = spacex_df['Payload Mass (kg)'].max()
 min_payload = spacex_df['Payload Mass (kg)'].min()
 
@@ -44,7 +44,16 @@ app.layout = html.Div(children=[html.H1('SpaceX Launch Records Dashboard',
                                 dcc.RangeSlider(id='payload-slider',
                                                 min=0, max=10000, step=1000,
                                                 marks={0:'0',
-                                                       100:'100'},
+                                                       1000:'1000',
+                                                       2000:'2000',
+                                                       3000:'3000',
+                                                       4000:'4000',
+                                                       5000:'5000',
+                                                       6000:'6000',
+                                                       7000:'7000',
+                                                       8000:'8000',
+                                                       9000:'9000',
+                                                       10000:'10000'},
                                                 value=[min_payload, max_payload],
                                                 tooltip={"placement": "bottom", "always_visible": True}),
 
